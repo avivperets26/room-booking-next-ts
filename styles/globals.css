@@ -1,0 +1,316 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: #AF8F85;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: #000000;
+  background: #DCE4EB
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.room {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #AAB4C5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  color: #000000;
+  background-color: #AAB4C5;
+}
+
+
+.room-card {
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.room-info {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-description {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.room-price{
+  font-weight:bold;
+}
+.room-available{
+  font-weight: 300;
+}
+
+.book-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  padding: 2rem 1rem; 
+  background-color: #AF8F85;
+  border: 1px solid #9b7e75;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  white-space: nowrap;
+  cursor: pointer; 
+  text-decoration: none; 
+  border-radius: 0.25rem; 
+  
+}
+.book-button:hover {
+  background-color: black; 
+  color: white; 
+}
+
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .room-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.main-title h1{
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color:rgb(57 55 55);
+}
+.main-title span{
+  color:#AF8F85
+}
+
+.confirmation, .background-info, .welcome-view-container {
+  border: 3px solid #AAB4C5;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f0f0f0;
+}
+
+.confirmation h2, .background-info h2, .welcome-view-container h2{
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.confirmation p, .welcome-view-container p {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.room-details, .background-details {
+  margin-bottom: 15px;
+}
+.confirmation-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+
+.confirmation-check input[type="checkbox"] {
+  appearance: none; 
+  width: 20px; 
+  height: 20px; 
+  border: 2px solid #333; 
+  border-radius: 5px; 
+  margin-right: 10px; 
+  cursor: pointer; 
+}
+
+.confirmation-check input[type="checkbox"]:checked {
+  background-color: #333; 
+}
+
+.confirmation-check label {
+  font-size: 24px; 
+  color: #8c8c8c; 
+  cursor: pointer; 
+  font-weight: bold;
+}
+
+
+
+ .background-check {
+  margin-bottom: 15px;
+}
+ .background-info input[type="checkbox"] + label {
+  cursor: pointer;
+}
+.welcome-view-container .actions {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation .actions {
+  justify-content: space-between;
+}
+.background-info .actions {
+  text-align: right;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
+  gap: 40px;
+}
+
+.next-previous-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.previous-button,
+.next-button,
+.cancel-button,.done-button,.submit-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #AF8F85;
+  color: white;
+  width: 100px; 
+  text-align: center; 
+}
+
+.previous-button:hover,
+.next-button:hover,
+.cancel-button:hover,.done-button:hover,.submit-button:hover {
+  background-color: black;
+}
+
+.next-button:disabled, .submit-button:disabled{
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.previous-button:disabled{
+  display: none;
+}
+.background-info input[type="text"],
+.background-info input[type="number"],
+.background-info input[type="email"],
+.background-info select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.background-info input[type="text"]:focus,
+.background-info input[type="number"]:focus,
+.background-info select:focus {
+  border-color: #4A90E2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+.background-info label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.background-info .info-section p {
+  margin-bottom: 15px;
+  font-style: italic;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.error {
+  color: red; 
+  font-size: 0.875em; 
+  margin-top: 4px;
+}
+
+
+.succuss-svg{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px; 
+  transform-origin: center bottom;
+  animation: fall 4s linear infinite;
+}
+
+.confetti.square {
+  clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+}
+.confetti.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; 
+  pointer-events: none; 
+}
